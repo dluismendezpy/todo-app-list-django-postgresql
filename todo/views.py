@@ -15,7 +15,7 @@ def todo_list(request):
 
 def insert_todo(request:HttpRequest):
     """ Insert a new task """
-    todo_to_insert = Todo(content = request.POST['task'])
+    todo_to_insert = Todo(task = request.POST['task'])
     todo_to_insert.save()
 
     return redirect('todo_list')
